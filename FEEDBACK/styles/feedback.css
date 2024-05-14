@@ -1,0 +1,633 @@
+@font-face {
+    font-family: 'Craft Gothics Light';
+    src: local('Craft Gothic Light'), local('Craft-Gothic-Light'),
+        url('../fonts/CraftGothic-Light.woff2') format('woff2'),
+        url('../fonts/CraftGothic-Light.woff') format('woff'),
+        url('../fonts/CraftGothic-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'Craft Gothic';
+    src: local('Craft Gothic Regular'), local('Craft-Gothic-Regular'),
+        url('../fonts/CraftGothic-Regular.woff2') format('woff2'),
+        url('../fonts/CraftGothic-Regular.woff') format('woff'),
+        url('../fonts/CraftGothic-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BITSUMIS';
+    src: local('BITSUMIS'), 
+        url('../fonts/BITSUMIS.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Craft Gothic Condensed';
+    src: local('Craft Gothic Condensed'), local('Craft-Gothic-Condensed'),
+        url('../fonts/CraftGothic-Condensed.woff2') format('woff2'),
+        url('../fonts/CraftGothic-Condensed.woff') format('woff'),
+        url('../fonts/CraftGothic-Condensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Craft Gothic Light';
+    src: local('Craft Gothic Light Condensed'), local('Craft-Gothic-Light-Condensed'),
+        url('../fonts/CraftGothic-LightCondensed.woff2') format('woff2'),
+        url('../fonts/CraftGothic-LightCondensed.woff') format('woff'),
+        url('../fonts/CraftGothic-LightCondensed.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Craft Gothic';
+    src: local('Craft Gothic Regular'), local('Craft-Gothic-Regular'),
+        url('../fonts/CraftGothic-Regular.woff2') format('woff2'),
+        url('../fonts/CraftGothic-Regular.woff') format('woff'),
+        url('../fonts/CraftGothic-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans Condensed Bold';
+    src: local('Open Sans Condensed Bold'),
+        url('../fonts/OpenSans-CondBold.ttf') format('trueType');
+    font-weight: 300;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: grey;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: #313131;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: red;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	margin: 0;
+}
+
+.navigation {
+	display: flex;
+	justify-content: space-between;
+	background-color: #333333;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+	min-height: 10vh;
+}	
+
+.left-nav {
+	width: 75%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.nav-bar {
+	width: 100%;
+    list-style: none;
+    position: relative;
+    background-color: var(--color2);
+    padding: 1.2rem 2rem;
+}
+.menu {display: flex; }
+.menu li {padding-left: 3rem;}
+.menu li a {
+    text-decoration: none;
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+    margin-right: 5.5rem;
+    font-size: clamp(1rem, 1vw, 2.2rem);
+    color: white;
+    font-weight: bold;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0 ;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    transition: 0.15s ease-in-out;
+}
+.menu li a:hover:after {width: 100%;}
+
+.open-menu , .close-menu {
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    font-size: 3rem;
+    display: none;
+}
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+.close-menu {
+    top: 2rem;
+    right: 2rem;
+}
+#check {display: none;}
+
+.right-nav {
+	width: 25%;
+	max-width: 58rem;
+	padding-top: .5rem;
+	background-image: url('../images/Products/nav-bg.svg');
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	padding-right: 1%;
+	z-index: 999;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.right-nav p{
+	font-family: 'BITSUMIS';
+	margin-right: 1rem;
+	color: white;
+	font-size: clamp(2.3rem, 1.5vw, 4.5rem);
+}
+
+
+.logo-img img {
+	margin-right: 1rem;
+	display: block;
+	width: 4rem;
+	
+}
+
+.search-logo {
+	margin-bottom: 1rem;
+	width: 4rem;
+}
+.search-container {
+	margin-right: 10%;
+	position: relative;
+}
+.search-bar {
+	margin: 9% 0;
+    padding: 1rem;
+    border: 2px solid white;
+    border-radius: 20px;
+	width: 12.5vw;
+	max-width: 24.5rem;
+	background-image: url('../images/Products/search_icon.png');
+	background-repeat: no-repeat;
+    background-position: 21.5rem center;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.search_bar.hidden {
+    display: none;
+}
+
+.search-bar::placeholder {
+    color: white;
+}
+
+#suggestions-list {
+  background-color: grey;
+  font-family: 'Poppins';
+  font-size: 1.5rem;
+  display: none;
+  background: #252222;
+  color: white;
+  position: absolute;
+  margin-top:0;
+  width: 100%;
+}
+
+#suggestions-list span {
+  display: block;
+  padding: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc; 
+}
+
+#suggestions-list span:last-child {
+  border-bottom: none;
+}
+
+#suggestions-list span:hover {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+.content2{
+    width: 100%;
+    height: 90px;
+    background-color: #333333;
+    display: flex;
+    justify-content: space-between;
+}
+.content2text{
+    margin-left: 50px;
+    color: #E2E1E1;
+    width: 400px;
+    margin-top: 25px;
+    font-size: 15px;
+}
+
+.content2text p{
+    margin:0;
+    font-family: 'Poppins';
+}
+
+.content2email p{
+    margin:0;
+    font-family: 'Poppins';
+}
+.content2email{
+    display: flex;
+    color: #E2E1E1;
+    margin: 30px;
+    margin-right: 50px;
+    border-bottom: 1px solid white;
+    border-image: linear-gradient(to right, white  58%, transparent 50%) 100% 1;
+}
+.content2email p{
+    width: 300px;
+    color: #E2E1E1;
+    font-size: 15px;
+}
+.content2email p a{
+    color: white;
+    text-decoration: none;
+}
+.content2send{
+    margin-top: -10px;
+    justify-content: center;
+}
+.content2send a p{
+    padding: 10px;
+    width: 150px;
+    color: white;
+    text-align: center;
+    border-radius: 40px;
+    background-color: #9B0B0B;
+    font-size: 17px;
+}
+.content2send a b{
+    float: right;
+    font-size: 35px;
+    margin-top: -13px;
+    margin-right: 5px;
+}
+.content2send a{
+    text-decoration: none;
+}
+.content2send a p:hover{
+    background-color: black;
+}
+
+.footer {
+	padding: 2% 4%;
+	background-color: #252222;
+	display: flex;
+	justify-content: center;
+}
+
+.section {
+	width: 170rem;
+	justify-content: space-between;
+	display: flex;
+}
+.section1 {
+	width: 22%;
+}
+
+.footer-logo {
+	width: 22rem;	
+	max-width:100%;
+}
+
+.section1 p {
+	font-family: 'Niramit';
+	color: white;
+	font-size: 1.9rem;
+	margin: 1% 0;
+}
+
+.section1 hr {
+	width: 22%;
+	margin: 0;
+}
+
+.social-links {
+	display:flex;
+	align-items: center;
+	margin-top:12%;
+	flex-wrap: wrap;
+}
+
+.social-links a {
+    margin-right: 4%;
+    width: 4rem;
+}
+
+
+.section2 {
+	width: 50%;
+	display: flex;
+	justify-content:space-between;
+}
+
+.footer-title {
+	font-family: 'Craft Gothic';
+	color: #FF3A3A;
+	font-size: 2.5rem;
+	margin: .5rem 0 1rem 0;
+}
+
+.red-line {
+	border-color:#FF3A3A;
+	width: 15%;
+	margin:0;
+}
+
+.quick-li {
+	width: 40%;
+}
+
+.quick-li ul {
+	display:flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 0 0 0 1.2rem;
+}
+
+
+.quick-li li {
+	flex: 0 0 calc(50%);
+	list-style-image: url('../images/Products/bullet.svg');
+	line-height: 4rem;
+	font-size: 1.8rem;
+}
+
+.quick-li li a:hover {
+	color: red;
+}
+
+.quick-li a {
+	font-family: 'Craft Gothics Light';
+	color: white;
+	text-decoration: none;
+}
+
+.contact-info {
+	width: 40%;
+}
+
+.infos {
+	display:flex;
+	margin: 2% 0;
+}
+
+.location-details {
+	font-family: 'Craft Gothics Light';
+	color: white;
+	font-size: 1.6rem;
+	margin-left: 7.4%;
+}
+
+.info-p {
+	font-family: 'Craft Gothics Light';
+	color: white;
+	margin-top: 3.8%;
+	font-size: 1.6rem;
+	margin-left: 6%;
+}
+
+.section3 {
+	width: 20%;
+}
+
+.section3 p {
+	font-family: 'Poppins';
+	color: white;
+	font-weight: 500;
+	font-size: 1.6rem;
+	margin: .2rem 0 2.5rem 0;
+}
+
+.call-box {
+	width: 26rem;	
+	max-width:100%;
+}
+
+.credit-cards {
+	margin-top: 2rem;
+}
+
+.credit-cards img {
+	width: 4.65rem;
+	margin-right: .5rem;
+}
+
+.body {
+    min-height: 100vh;
+    padding: 2.5% 5%;
+}
+
+.hero-image {
+    width: 100%;
+    height: 120px;
+    background-image: url('../images/Feedback/hero-image.svg');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-title {
+    color: white;
+    font-family: 'Open Sans Condensed Bold';
+    margin-right: 4%;
+    font-size: 2.1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-button {
+    margin-left: 3%;
+}
+
+.add-comment {
+    background-color: #9B0B0B;
+    border-radius: 3rem;
+    padding: 1.1rem 3.6rem;
+    color: white;
+    font-family: 'Poppins';
+    font-weight: 500;
+    border: none;   
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.add-comment:hover {
+    background-color: #7d0808; 
+}
+
+.count-comments h1 {
+    color:#252222;
+    font-family: 'Niramit';
+    font-size: 2.5rem;
+    margin: 2rem 0 1.5rem 0;
+}
+
+.comment {
+    padding: 2% 5%;
+    background-color: #FCFCFC;
+    border: 2px solid #B9B9B9;
+    margin-bottom: 2%;
+}
+
+.upper-comment {
+    width: 83%;
+    padding-bottom: 1%;
+    margin-left: 7.8%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-wrap: wrap;
+}
+
+.suggestion {
+    font-family: Niramit;
+    background-color:  #7d0808; 
+    color: white;
+    border: none;
+    border-radius: .8rem;
+    font-size: 2rem;
+    padding: .2rem 3rem;
+    cursor:pointer;
+    margin-bottom: 1%;
+    font-weight: 600;
+}
+
+
+.suggestion.active {
+    background-color: white;
+    border: 2px solid #7d0808; 
+    color:  #7d0808; 
+}
+
+.star {
+    margin-left: 7%; 
+    padding: 1rem 0 1.5rem 0;
+    display: flex;
+    align-items:center;
+}
+
+.star p {
+    font-family: Niramit;
+    color: #eaba1b;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 1.5% 0 0;
+}
+
+.profile-img {
+    margin-right: 1.8%; 
+}
+
+.textbox {
+    height: 10rem;
+    width: 83%;
+    padding: 1rem; /* Add padding to create space for the inner shadow */
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3); /* Add an inner shadow */
+    font-family: 'Niramit', sans-serif; /* Set the font family */
+    background-color: #F4F4F6;
+}
+
+.textbox::placeholder {
+    font-family: 'Niramit', sans-serif; 
+    font-size: 1.8rem;
+    font-weight: 600;
+    opacity: .8;   
+}
+
+.enter {
+    margin-left: 2%; 
+}
+
+.upper-comment-descript {
+    display: flex;  
+}
+
+.profile-img2 {
+    margin-right: 1.8%; 
+    margin-top: 15%;
+}
+
+
+.right-side {
+    margin-left: 2rem;
+    width: 90%;
+}
+
+.right-side h1 {
+    font-family: 'Niramit';
+    font-weight: 700;
+    margin: 0;
+    font-size: 2.3rem;
+}
+
+.right-side p {
+    font-family: 'Niramit';
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.7rem;
+}
+    
+#rating2 {
+    transform: scale(0.8);
+}
+
+.star-comments {
+    margin-left: -2rem;
+}
+
+.lower-comment-descript {
+    margin-top: 3rem;
+}
+.lower-comment-descript p{
+    font-family: 'Niramit';
+    font-size: 1.6rem;
+}
